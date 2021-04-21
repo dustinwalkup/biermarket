@@ -21,7 +21,14 @@ const Header = () => {
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>the Bier Market</Navbar.Brand>
+            <Navbar.Brand>
+              <img
+                src='/images/logo/favicon-32x32.png'
+                alt=''
+                className='d-inline-block align-top'
+              />{' '}
+              the Bier Market
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>

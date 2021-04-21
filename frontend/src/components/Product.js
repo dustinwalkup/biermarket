@@ -13,6 +13,11 @@ const Product = ({ product }) => {
         <Link to={`/product/${product._id}`}>
           <Card.Title as='div'>
             <strong>{product.name}</strong>
+            <p>
+              {product.brand}
+              <br />
+              {product.abv}% ABV
+            </p>
           </Card.Title>
         </Link>
         <Card.Text as='div'>

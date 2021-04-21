@@ -18,6 +18,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [brand, setBrand] = useState('')
   const [category, setCategory] = useState('')
   const [countInStock, setCountInStock] = useState(0)
+  const [abv, setAbv] = useState(0)
   const [description, setDescription] = useState('')
   const [uploading, setUploading] = useState(false)
 
@@ -48,6 +49,7 @@ const ProductEditScreen = ({ match, history }) => {
         setCategory(product.category)
         setCountInStock(product.countInStock)
         setDescription(product.description)
+        setAbv(product.abv)
       }
     }
   }, [product, productId, dispatch, history, successUpdate])
@@ -85,6 +87,7 @@ const ProductEditScreen = ({ match, history }) => {
         category,
         description,
         countInStock,
+        abv,
       })
     )
   }
@@ -146,6 +149,15 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={(e) => setBrand(e.target.value)}></Form.Control>
             </Form.Group>
 
+            <Form.Group controlId='abv'>
+              <Form.Label>ABV</Form.Label>
+              <Form.Control
+                type='number'
+                placeholder='Enter ABV'
+                value={abv}
+                onChange={(e) => setAbv(e.target.value)}></Form.Control>
+            </Form.Group>
+
             <Form.Group controlId='countInStock'>
               <Form.Label>Count In Stock</Form.Label>
               <Form.Control
@@ -175,7 +187,7 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={(e) => setDescription(e.target.value)}></Form.Control>
             </Form.Group>
 
-            <Button type='subtmi' variant='primary'>
+            <Button type='submit' variant='primary'>
               Update
             </Button>
           </Form>

@@ -69,6 +69,13 @@ const ProductScreen = ({ history, match }) => {
               <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
+                  <p>
+                    {product.brand}
+                    <br />
+                    {product.abv}% ABV
+                    <br />
+                    <em> {product.category} </em>
+                  </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Rating
@@ -78,7 +85,7 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
                 <ListGroup.Item>
-                  Description: {product.description}
+                  <strong>Tasting Notes</strong>: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>

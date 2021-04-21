@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Image } from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
 import Product from '../components/Product'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
-import ProductCarousel from '../components/ProductCarousel'
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -26,10 +25,13 @@ const HomeScreen = ({ match }) => {
     <>
       <Meta />
       {/* {!keyword && <ProductCarousel />} */}
-      <Link to='/' className='btn btn-light'>
-        Go Back
-      </Link>
-      <h1>Latest Beers</h1>
+      {!keyword ? (
+        <Image src='../images/logo/logosmall.png' fluid />
+      ) : (
+        <Link to='/' className='btn btn-light'>
+          Go Back
+        </Link>
+      )}
       {loading ? (
         <Loader />
       ) : error ? (
