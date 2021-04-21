@@ -9,6 +9,7 @@ MongoDB, Expressjs, React/Redux, Nodejs
    <a href="https://thebiermarket.herokuapp.com/">
       <img src="https://s3.amazonaws.com/hackdesign/tools/app_images/000/000/037/icon_small/heroku-logo-6e6c2ed8be2ad02ac96455d53e4e7e43.png?1385326105" />
    </a>
+   <br/>
    https://thebiermarket.herokuapp.com/
   
    
